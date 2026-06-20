@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<TenSinhVienDbContext>(options =>
+builder.Services.AddDbContext<VuVanCuongDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TenSinhVienDb")));
 
 var app = builder.Build();
