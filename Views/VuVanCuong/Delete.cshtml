@@ -1,0 +1,25 @@
+@model _2526_2221050692_BaiThi.Models.LopHoc
+
+@{
+    ViewData["Title"] = "Xóa Lớp học";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Lớp học</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Mã lớp</dt>
+        <dd class="col-sm-10">@Model.MaLop</dd>
+
+        <dt class="col-sm-2">Tên lớp</dt>
+        <dd class="col-sm-10">@Model.TenLop</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="MaLop" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a class="btn btn-secondary" asp-action="Index">Hủy</a>
+</form>

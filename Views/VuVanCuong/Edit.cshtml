@@ -1,0 +1,28 @@
+@model _2526_2221050692_BaiThi.Models.LopHoc
+
+@{
+    ViewData["Title"] = "Sửa Lớp học";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Edit" method="post" class="row g-3">
+    <input type="hidden" asp-for="MaLop" />
+    <div class="col-md-6">
+        <label asp-for="MaLop" class="form-label"></label>
+        <input asp-for="MaLop" class="form-control" readonly />
+    </div>
+    <div class="col-md-6">
+        <label asp-for="TenLop" class="form-label"></label>
+        <input asp-for="TenLop" class="form-control" />
+        <span asp-validation-for="TenLop" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a class="btn btn-secondary" asp-action="Index">Hủy</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

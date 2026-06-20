@@ -1,0 +1,33 @@
+@model IEnumerable<_2526_2221050692_BaiThi.Models.LopHoc>
+
+@{
+    ViewData["Title"] = "Danh sách Lớp học";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a class="btn btn-primary" asp-action="Create">Thêm mới Lớp học</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Mã lớp</th>
+            <th>Tên lớp</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaLop</td>
+            <td>@item.TenLop</td>
+            <td>
+                <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.MaLop">Xem</a>
+                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.MaLop">Sửa</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.MaLop">Xóa</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
